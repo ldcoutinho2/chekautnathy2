@@ -153,7 +153,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
     </div>
   </div>
 </div><div id="video-container">
-  <video id="live-video" autoplay loop>
+  <video id="live-video" autoplay loop muted>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
   <button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
@@ -170,18 +170,19 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
   <div class="reaction" style="right: 40px; animation-delay: 2s">😍</div>
 </div><div id="lock-screen">
   <h2>🔒 Live pausada</h2>
-  <p>Pra continuar assistindo a mc mirella AO VIVO, gemendo e se exibindo só pra você... desbloqueie agora 🔞</p>
+  <p>Pra continuar assistindo a Nathy AO VIVO, gemendo e se exibindo só pra você... desbloqueie agora 🔞</p>
   <button class="unlock-btn" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://app.pushinpay.com.br/service/pay/9f3cd184-63d3-43f4-ae29-ff07fb540f68'">🔓 Liberar por R$9,99</button>
 </div><script>
   function startLive() {
     const video = document.getElementById('live-video');
     document.querySelector('.enter-live').style.display = 'none';
-    document.querySelector('#live-video').style.filter = 'none';
+    video.style.filter = 'none';
     video.muted = false;
     video.play();
     setTimeout(() => {
+      video.pause();
       document.getElementById('lock-screen').style.display = 'flex';
-    }, 30000);
+    }, 34000);
   }
 </script></body>
 </html>
