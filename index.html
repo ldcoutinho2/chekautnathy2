@@ -55,12 +55,15 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       color: #ff4d4d;
     }
     #video-container {
-      display: none;
+      display: block;
+      position: relative;
     }
     video {
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      filter: blur(8px);
+      transition: filter 0.5s ease;
     }
     .comments {
       position: absolute;
@@ -69,6 +72,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       font-size: 14px;
       height: 100px;
       overflow: hidden;
+      z-index: 10;
     }
     .comment {
       margin-bottom: 6px;
@@ -85,6 +89,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       right: 10px;
       font-size: 20px;
       animation: float 3s ease-in-out infinite;
+      z-index: 10;
     }
     @keyframes float {
       0% { transform: translateY(0); opacity: 1; }
@@ -141,12 +146,11 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       <div class="live-tag">🔴 AO VIVO AGORA — 3.849 assistindo</div>
     </div>
   </div>
-</div><button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
-
-<div id="video-container">
-  <video id="live-video" muted loop>
+</div><div id="video-container">
+  <video id="live-video" autoplay muted loop>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
+  <button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
   <div class="comments" id="comments">
     <div class="comment">🔥 Ela tá mostrando tudo agora...</div>
     <div class="comment">👀 Que isso Mirella 😳</div>
@@ -165,8 +169,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
 </div><script>
   function startLive() {
     document.querySelector('.enter-live').style.display = 'none';
-    document.getElementById('video-container').style.display = 'block';
-    document.getElementById('live-video').play();
+    document.querySelector('#live-video').style.filter = 'none';
     setTimeout(() => {
       document.getElementById('lock-screen').style.display = 'flex';
     }, 30000);
