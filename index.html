@@ -2,10 +2,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MC Mirella - Live Exclusiva</title>  <!-- Meta Pixel -->  <script>
+  <title>Live Exclusiva</title>  <!-- Meta Pixel -->  <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    n.callMethod.apply(n,arguments):n.queue.push(n)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
@@ -31,7 +31,6 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       padding: 10px;
       background: rgba(0, 0, 0, 0.6);
       z-index: 10;
@@ -56,7 +55,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       color: #ff4d4d;
     }
     #video-container {
-      display: block;
+      display: none;
     }
     video {
       width: 100vw;
@@ -65,7 +64,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
     }
     .comments {
       position: absolute;
-      bottom: 80px;
+      bottom: 100px;
       left: 10px;
       font-size: 14px;
       height: 100px;
@@ -74,18 +73,22 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
     .comment {
       margin-bottom: 6px;
       text-shadow: 0 0 3px #000;
+      animation: floatUp 5s linear infinite;
     }
-    .heart {
+    @keyframes floatUp {
+      0% { transform: translateY(100px); opacity: 1; }
+      100% { transform: translateY(-100px); opacity: 0; }
+    }
+    .reaction {
       position: absolute;
-      bottom: 60px;
+      bottom: 50px;
       right: 10px;
       font-size: 20px;
-      color: #ff4d4d;
-      animation: float 2s ease-in-out infinite;
+      animation: float 3s ease-in-out infinite;
     }
     @keyframes float {
       0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(-120px); opacity: 0; }
     }
     #lock-screen {
       position: absolute;
@@ -115,17 +118,33 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       font-weight: bold;
       cursor: pointer;
     }
+    .enter-live {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #e1306c;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 20;
+    }
   </style></head>
 <body><div class="top-bar">
   <div class="top-left">
     <img src="https://leonardocoutinho.publit.io/file/th.jpg" class="profile-pic" alt="Perfil">
     <div>
-      <div class="username">@mcmirellaaolive</div>
-      <div class="live-tag">🔴 Ao vivo — 3.849 assistindo</div>
+      <div class="username">MC Mirella</div>
+      <div class="live-tag">🔴 AO VIVO AGORA — 3.849 assistindo</div>
     </div>
   </div>
-</div><div id="video-container">
-  <video id="live-video" autoplay muted loop>
+</div><button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
+
+<div id="video-container">
+  <video id="live-video" muted loop>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
   <div class="comments" id="comments">
@@ -133,15 +152,24 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
     <div class="comment">👀 Que isso Mirella 😳</div>
     <div class="comment">❤️❤️❤️❤️❤️</div>
     <div class="comment">Ela tá pelada mesmo kkkkk</div>
+    <div class="comment">Meu Deus 😳😳😳</div>
+    <div class="comment">Tô ficando duro kkkkkk</div>
   </div>
-  <div class="heart">❤️</div>
+  <div class="reaction" style="right: 20px; animation-delay: 0s">❤️</div>
+  <div class="reaction" style="right: 30px; animation-delay: 1s">🔥</div>
+  <div class="reaction" style="right: 40px; animation-delay: 2s">😍</div>
 </div><div id="lock-screen">
   <h2>🔒 Live pausada</h2>
-  <p>Pra continuar assistindo a MC Mirella AO VIVO, gemendo e se exibindo só pra você... desbloqueie agora 🔞</p>
+  <p>Pra continuar assistindo a Nathy AO VIVO, gemendo e se exibindo só pra você... desbloqueie agora 🔞</p>
   <button class="unlock-btn" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://checkout.com'">🔓 Liberar por R$9,99</button>
 </div><script>
-  setTimeout(() => {
-    document.getElementById('lock-screen').style.display = 'flex';
-  }, 30000);
+  function startLive() {
+    document.querySelector('.enter-live').style.display = 'none';
+    document.getElementById('video-container').style.display = 'block';
+    document.getElementById('live-video').play();
+    setTimeout(() => {
+      document.getElementById('lock-screen').style.display = 'flex';
+    }, 30000);
+  }
 </script></body>
 </html>
