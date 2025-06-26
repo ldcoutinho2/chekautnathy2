@@ -136,6 +136,12 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       border-radius: 10px;
       cursor: pointer;
       z-index: 20;
+      animation: pulseBtn 1.5s infinite;
+    }
+    @keyframes pulseBtn {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style></head>
 <body><div class="top-bar">
@@ -147,7 +153,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
     </div>
   </div>
 </div><div id="video-container">
-  <video id="live-video" autoplay muted loop>
+  <video id="live-video" autoplay loop>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
   <button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
@@ -168,8 +174,11 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
   <button class="unlock-btn" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://checkout.com'">🔓 Liberar por R$9,99</button>
 </div><script>
   function startLive() {
+    const video = document.getElementById('live-video');
     document.querySelector('.enter-live').style.display = 'none';
     document.querySelector('#live-video').style.filter = 'none';
+    video.muted = false;
+    video.play();
     setTimeout(() => {
       document.getElementById('lock-screen').style.display = 'flex';
     }, 30000);
