@@ -124,24 +124,28 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
       cursor: pointer;
     }
     .enter-live {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: #e1306c;
+      background-color: #ff2e63;
       color: white;
-      padding: 15px 30px;
+      padding: 15px 40px;
       font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 999px;
       cursor: pointer;
       z-index: 20;
       animation: pulseBtn 1.5s infinite;
+      box-shadow: 0 0 10px #ff2e63;
     }
     @keyframes pulseBtn {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-      100% { transform: scale(1); opacity: 1; }
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     }
   </style></head>
 <body><div class="top-bar">
@@ -156,9 +160,7 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
   <video id="live-video" autoplay loop muted>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
-  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); z-index:20;">
-    <button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
-  </div>
+  <button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
   <div class="comments" id="comments">
     <div class="comment">🔥 Ela tá mostrando tudo agora...</div>
     <div class="comment">👀 Que isso Mirella 😳</div>
@@ -177,14 +179,14 @@ src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></
 </div><script>
   function startLive() {
     const video = document.getElementById('live-video');
-    document.querySelector('.enter-live').parentElement.style.display = 'none';
+    document.querySelector('.enter-live').style.display = 'none';
     video.style.filter = 'none';
     video.muted = false;
     video.play();
     setTimeout(() => {
       video.pause();
       document.getElementById('lock-screen').style.display = 'flex';
-    }, 31000);
+    }, 34000);
   }
 </script></body>
 </html>
