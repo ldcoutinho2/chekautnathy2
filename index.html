@@ -2,7 +2,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MC Mirella - Live Exclusiva</title>
+  <title>MC Mirella - Live Exclusiva</title>  <!-- Meta Pixel -->  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1032381935101857');
+    fbq('track', 'PageView');
+  </script><noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/></noscript>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -42,22 +55,8 @@
       font-size: 12px;
       color: #ff4d4d;
     }
-    .enter-live {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #e1306c;
-      color: white;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      z-index: 11;
-    }
-    #video-container, #lock-screen {
-      display: none;
+    #video-container {
+      display: block;
     }
     video {
       width: 100vw;
@@ -94,28 +93,29 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: rgba(0,0,0,0.9);
-      display: flex;
+      background-color: rgba(0,0,0,0.85);
+      display: none;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 20px;
+      z-index: 99;
     }
     #lock-screen p {
       margin-bottom: 20px;
     }
     .unlock-btn {
-      background-color: #25d366;
+      background-color: #ff2e63;
       color: white;
-      padding: 15px 25px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 8px;
+      border-radius: 999px;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
     }
-  </style>
-</head>
+  </style></head>
 <body><div class="top-bar">
   <div class="top-left">
     <img src="https://leonardocoutinho.publit.io/file/th.jpg" class="profile-pic" alt="Perfil">
@@ -124,10 +124,8 @@
       <div class="live-tag">🔴 Ao vivo — 3.849 assistindo</div>
     </div>
   </div>
-</div><button class="enter-live" onclick="startLive()">🔴 Entrar na Live</button>
-
-<div id="video-container">
-  <video id="live-video" autoplay muted>
+</div><div id="video-container">
+  <video id="live-video" autoplay muted loop>
     <source src="https://d1yei2z3i6k35z.cloudfront.net/13197117/685cc8e5d11d3_V%C3%ADdeodoWhatsAppde2025-06-25%C3%A0s02.14.48_0b11517e.mp4" type="video/mp4">
   </video>
   <div class="comments" id="comments">
@@ -140,15 +138,10 @@
 </div><div id="lock-screen">
   <h2>🔒 Live pausada</h2>
   <p>Pra continuar assistindo a MC Mirella AO VIVO, gemendo e se exibindo só pra você... desbloqueie agora 🔞</p>
-  <button class="unlock-btn" onclick="window.location.href='https://checkout.com'">🔓 Liberar por R$9,99</button>
+  <button class="unlock-btn" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://checkout.com'">🔓 Liberar por R$9,99</button>
 </div><script>
-  function startLive() {
-    document.querySelector('.enter-live').style.display = 'none';
-    document.getElementById('video-container').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('video-container').style.display = 'none';
-      document.getElementById('lock-screen').style.display = 'flex';
-    }, 30000);
-  }
+  setTimeout(() => {
+    document.getElementById('lock-screen').style.display = 'flex';
+  }, 30000);
 </script></body>
 </html>
