@@ -1,151 +1,116 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔒 Pagamento Privado - Nathy</title>
-    <link rel="icon" href="logo.png">
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1032381935101857');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1032381935101857&ev=PageView&noscript=1"/>
-    </noscript>
-    <!-- End Meta Pixel Code -->
-
-    <style>
-        body {
-            background-color: #000;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #111;
-            border-radius: 12px;
-            box-shadow: 0 0 20px #ff0077;
-        }
-        h1 {
-            color: #ff0077;
-        }
-        .alert {
-            background-color: #ff0077;
-            padding: 8px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .pix-code {
-            background-color: #222;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-            word-break: break-word;
-            font-size: 14px;
-        }
-        .btn {
-            background-color: #ff0077;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px 0;
-        }
-        .btn:hover {
-            background-color: #e6006f;
-        }
-        .timer {
-            font-size: 18px;
-            color: #ff0077;
-            margin-top: 10px;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #777;
-        }
-        .banner {
-            width: 100%;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <img src="banner2.png" class="banner" alt="Banner +18">
-
-    <div class="alert">🚨 ATENÇÃO: Pagamento protegido para sua chamada de vídeo privada com a Nathy</div>
-    <h1>🔒 Pagamento Seguro</h1>
-    <p>Finalize seu pagamento AGORA e tenha acesso IMEDIATO à chamada de vídeo sem censura... Só eu e você!</p>
-
-    <h3>⬇️ Copia o código PIX abaixo e faz o pagamento:</h3>
-    <div class="pix-code" id="pixCode">
-      00020101021226800014br.gov.bcb.pix2558pix.delbank.com.br/v2/cob/vcharge60255dc7f15941ceb13fb2a2a5204000053039865802BR5907DELBANK6007ARACAJU62070503***63049140
-    </div>
-    <button class="btn" onclick="copiarPix(); fbq('track', 'InitiateCheckout')">📋 Copiar Código PIX</button>
-
-    <div class="timer">⏳ Código expira em: <span id="countdown">05:00</span></div>
-
-    <br>
-    <a href="https://api.whatsapp.com/send?phone=5521968068902&text=realizei%20o%20pagamento%20e%20quero%20fazer%20minha%20chamada%20de%20video%20nathy" class="btn" id="confirmar" style="display:none;" onclick="fbq('track', 'Purchase')">
-        ✅ JÁ PAGUEI - QUERO LIBERAÇÃO!
-    </a>
-
-    <div class="footer">
-        <p>Site independente. Nenhum vínculo com Instagram, Meta ou qualquer rede social.</p>
-        <p>Produto 100% digital — +18 — Conteúdo Privado</p>
-    </div>
-</div>
-
-<script>
-    // Timer regressivo
-    let time = 300;
-    const countdown = document.getElementById('countdown');
-
-    setInterval(() => {
-        const minutes = String(Math.floor(time / 60)).padStart(2, '0');
-        const seconds = String(time % 60).padStart(2, '0');
-        countdown.innerText = `${minutes}:${seconds}`;
-        if(time > 0) time--;
-    }, 1000);
-
-    // Mostrar botão do WhatsApp após 30 segundos
-    setTimeout(() => {
-        document.getElementById('confirmar').style.display = 'block';
-    }, 30000);
-
-    function copiarPix() {
-        const pix = document.getElementById("pixCode").innerText;
-        navigator.clipboard.writeText(pix).then(function() {
-            alert("✅ Código PIX copiado com sucesso!");
-        }, function() {
-            alert("❌ Erro ao copiar. Copia manualmente.");
-        });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Mirella - Live Exclusiva</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #000;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
     }
-</script>
+    .live-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background: #111;
+      border-bottom: 1px solid #333;
+    }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid red;
+      margin-right: 10px;
+    }
+    .live-info {
+      text-align: left;
+    }
+    .live-info span {
+      display: block;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .live-btn {
+      margin: 50px auto;
+      background-color: #e1306c;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #video-container, #lock-screen {
+      display: none;
+    }
+    #video-container video {
+      width: 100%;
+      height: auto;
+    }
+    #comments {
+      background: #111;
+      padding: 10px;
+      height: 100px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    .comment {
+      margin-bottom: 5px;
+      text-align: left;
+    }
+    #lock-screen {
+      padding: 30px;
+      background: #111;
+    }
+    #lock-screen h2 {
+      margin-bottom: 10px;
+    }
+    .unlock-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body><div class="live-header">
+  <img src="perfil.jpg" alt="MC Mirella" class="profile-pic">
+  <div class="live-info">
+    <strong>@mcmirellaaolive</strong>
+    <span>🔴 Ao vivo — 3.849 assistindo</span>
+  </div>
+</div><button class="live-btn" onclick="startLive()">🔴 Entrar na Live</button>
 
-</body>
+<div id="video-container">
+  <video id="live-video" autoplay muted>
+    <source src="video.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo.
+  </video>
+  <div id="comments">
+    <div class="comment">🔥 Ela tá mostrando tudo...</div>
+    <div class="comment">👀 Que isso Mirella 😳</div>
+    <div class="comment">❤️❤️❤️❤️❤️</div>
+    <div class="comment">Caralho, ela tá pelada mesmo</div>
+  </div>
+</div><div id="lock-screen">
+  <h2>🔒 Live restrita</h2>
+  <p>Pra continuar vendo a MC Mirella AO VIVO, pelada e gemendo, desbloqueie agora 🔞</p>
+  <button class="unlock-btn" onclick="window.location.href='https://checkout-link.com'">🔓 Liberar acesso — R$9,99</button>
+</div><script>
+  function startLive() {
+    document.querySelector('.live-btn').style.display = 'none';
+    document.getElementById('video-container').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('video-container').style.display = 'none';
+      document.getElementById('lock-screen').style.display = 'block';
+    }, 30000); // 30 segundos
+  }
+</script></body>
 </html>
